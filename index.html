@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oncohumana Vivir</title>
-    <!-- Conexión a «framework» Bootstrap 5-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- referenciación a algunos íconos-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/boostrap-icons.css">
-    <!-- Enlace a los estilos-->
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oncohumana Vivir</title>
+        <!-- Conexión a «framework» Bootstrap 5-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous">
+        <!-- referenciación a algunos íconos-->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/boostrap-icons.css">
+        <!-- Enlace a los estilos-->
+        <link rel="stylesheet" href="style.css">
 
-<body>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #5EC7E9";>
-            <div class="container">
-                
-                <img src="img/Logo_OncoHumanaVivir.png" width="100" height="140" />
-                <a href="#" class="navbar-brand" style="font-family:Judson;font-size:300%;color:#FFFFFF;font-weight: bold;"> <span>Oncohumana Vivir</span></a></a>
-                
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+                style="background-color: #5EC7E9" ;>
+                <div class="container">
+
+                    <img src="img/Logo_OncoHumanaVivir.png" width="100"
+                        height="140" />
+                    <a href="#" class="navbar-brand"
+                        style="font-family:Judson;font-size:300%;color:#FFFFFF;font-weight: bold;">
+                        <span>Oncohumana Vivir</span></a></a>
+
                 <button class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarS"
                     aria-controls="navbarS"
                     aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                <span class="navbar-toggler-icon"></span>
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
 
                 </button>
                 <div class="collapse navbar-collapse" id="navbarS">
@@ -47,16 +55,93 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">Contacto</a>
                         </li>
+                        
+                        <div class="collapse navbar-collapse" id="navbarS">
+                            <a href="#" class="btn btn-secondary btn-lg">Inicie sesión</a>
+                        </div>
                     </ul>
+                    
 
-
-                </div>    
+                </div>
 
             </div>
         </nav>
 
+        <div id="carouselE" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button"
+                    data-bs-target="#carouselE"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="slide 1"></button>
 
+                
+                <button type="button"
+                    data-bs-target="#carouselE"
+                    data-bs-slide-to="1"
+                    aria-current="true"
+                    aria-label="slide 2"></button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html>                                      
+                
+                <button type="button"
+                    data-bs-target="#carouselE"
+                    data-bs-slide-to="2"
+                    aria-current="true"
+                    aria-label="slide 3"></button>
+
+            </div>
+            
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="img/Foto_AtenciónPaciente.jpeg" class="d-block w-100" alt="">
+                    <div class="carousel-caption">
+                        <h5>Atención médica especializada</h5>
+                        <p>
+                            Oncohumana Vivir es una clínica especializada en el tratamiento
+                            y cuidado de las personas con cáncer. Ofrece un servicio integral
+                            y personalizado, con un equipo multidisciplinario de profesionales
+                            de la salud, que brinda apoyo médico, psicológico, nutricional y
+                            social a los pacientes y sus familias. 
+                        </p>
+                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                    </div>
+                </div>   
+
+                <div class="carousel-item">
+                    <img src="img/Foto_FamiliaOnco.jpeg" class="d-block w-100" alt="">
+                    <div class="carousel-caption">
+                        <h5>Asesoramiento familiar</h5>
+                        <p>
+                            La asesoría se realiza de forma individual o grupal, según las
+                            necesidades y preferencias de cada familia. En Oncohumana Vivir
+                            queremos que la familia del paciente con cáncer se sienta
+                            acompañada, informada y fortalecida.
+                        </p>
+                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/Foto_Telemedicina.jpeg" class="d-block w-100" alt="">
+                    <div class="carousel-caption">
+                        <h5>Telemedicina</h5>
+                        <p>
+                            Oncohumana Vivir ofrece el servicio de telemedicina a sus
+                            pacientes con cáncer, para que puedan recibir una atención
+                            médica de calidad, sin tener que desplazarse a la clínica.
+                        </p>
+                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
