@@ -23,6 +23,7 @@
             </div>
             <div class="col-md-4">
             <br>
+            <form action="secciones/index.php" method="post">
                 <div class="card">
                     <div class="card-header" style="background-color:#C2F0FF">
                         Inicio de sesión
@@ -52,11 +53,9 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-
-
                     </div>
-                    
                 </div>
+            </form>
             </div>
         </div>   
     </div>
