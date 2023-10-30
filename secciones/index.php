@@ -1,3 +1,10 @@
+<?php
+// Solicitar la conexión a la base de datos
+include '../configuraciones/conecta.php';
+
+?>
+
+
 <?php include('../plantillas/header.php'); ?>
  
 
