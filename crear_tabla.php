@@ -2,7 +2,7 @@
  $servidor = "localhost";
  $usuario = "root";
  $password = "";
- $basedatos = "prueba3";
+ $basedatos = "oncohumana_vivir";
 
  $conexion = new mysqli($servidor, $usuario, $password, $basedatos);
 if($conexion->connect_error) {

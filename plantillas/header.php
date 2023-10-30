@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Sistema Oncohumana Vivir</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +16,7 @@
 <body>
   <nav class="navbar navbar-expand navbar-light bg-light">
       <div class="nav navbar-nav">
-          <a class="nav-item nav-link active" href="#" aria-current="page">Inicio</a>
+          <a class="nav-item nav-link active" href="index.php" aria-current="page">Inicio</a>
           <a class="nav-item nav-link" href="panel_pacientes.php">Panel de pacientes</a>
           <a class="nav-item nav-link" href="agenda.php">Agendamiento</a>
           <a class="nav-item nav-link" href="ordenes.php">Impresiones pendientes</a>
