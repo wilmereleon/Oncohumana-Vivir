@@ -11,12 +11,30 @@ if($conexion->connect_error) {
 }
 echo "Conexión establecida...";
 
-// Crear TABLA (verificar phpMyAdmin)
-$sql = "CREATE TABLE pacientes_eps(
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    mensaje VARCHAR(500) NOT NULL
+// Crear TABLA paciente_EPS (verificar phpMyAdmin)
+$sql = "CREATE TABLE pacientes_EPS (
+    id INT PRIMARY KEY,
+    tipo VARCHAR(50),
+    nombres VARCHAR(100),
+    apellidos VARCHAR(100),
+    edad INT,
+    telefono_fijo VARCHAR(20),
+    telefono_celular VARCHAR(20),
+    correo VARCHAR(100),
+    fecha_nacimiento DATE,
+    EPS ENUM('SURA', 'Cosánitas', 'SaludCoop'),
+    categoria ENUM('A', 'B', 'C')
+);";
+
+// Crear TABLA agenda (verificar phpMyAdmin)
+$sql = "CREATE TABLE agenda (
+    id INT PRIMARY KEY,
+    tipo VARCHAR(50),
+    nombres VARCHAR(100),
+    apellidos VARCHAR(100),
+    fecha_cita DATETIME,
+    estado ENUM('Paciente de ingreso', 'Paciente en sala', 'Atendido'),
+    FOREIGN KEY (id) REFERENCES pacientes_EPS(id)
 );";
 
 if($conexion->query($sql)==TRUE) {
