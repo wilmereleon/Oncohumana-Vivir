@@ -1,3 +1,49 @@
+<?php
+error_reporting(0);
+
+// Solicitar la conexión a la base de datos
+include 'configuraciones/conecta.php';
+
+if(isset($_POST['entrar'])){
+$ruser = $conecta->real_escape_string($_POST['usuario']);
+$rpass = $conecta->real_escape_string($_POST['contrasenna']);
+// generar consulta que extraiga datos de la base de datos
+$consulta = "SELECT * FROM usuarios WHERE usuario = '$ruser' and contrasenna = '$rpass'";
+if($resultado = $conecta->query($consulta)){
+  while($row = $resultado->fetch_array()){
+    $userok = $row['usuario'];
+    $passwordok = $row['contrasenna'];
+  }
+  $resultado->close();
+ }
+ $conecta->close();
+ if(isset($ruser) && isset($rpass)){
+  if($ruser == $userok && $rpass == $passwordok){
+    $_SESSION['login'] = TRUE;
+    $_SESSION['usuario'] = $usuario;
+    header("location:secciones/index.php");
+  }
+  else{
+    $mensaje.="<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+              <strong>Tus datos no son correctos. </strong> Verifica tus datos.
+              <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+              </button>
+              </div>";
+  }
+ }
+ else {
+  $mensaje.="<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+  <strong>Tus datos no son correctos. </strong> Verifica tus datos.
+  <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+  <span aria-hidden='true'>&times;</span>
+  </button>
+  </div>";
+ }
+}  
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -19,11 +65,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                
+            
             </div>
             <div class="col-md-4">
             <br>
-            <form action="secciones/index.php" method="post">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <div class="card">
                     <div class="card-header" style="background-color:#C2F0FF">
                         Inicio de sesión
@@ -52,12 +98,14 @@
                           <small id="helpId" class="form-text text-muted">Escriba su contraseña</small>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        <button type="submit" class="btn btn-primary" name="entrar">Iniciar sesión</button>
+                        
                     </div>
                 </div>
             </form>
             </div>
-        </div>   
+        </div>
+        <?php echo $mensaje; ?>   
     </div>
 
   </main>
