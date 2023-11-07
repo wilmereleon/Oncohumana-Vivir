@@ -1,14 +1,17 @@
 <?php
+session_start();
 error_reporting(0);
 
 // Solicitar la conexión a la base de datos
 include 'configuraciones/conecta.php';
 
 if(isset($_POST['entrar'])){
-$ruser = $conecta->real_escape_string($_POST['usuario']);
-$rpass = $conecta->real_escape_string($_POST['contrasenna']);
+$usuario = $conecta->real_escape_string($_POST['usuario']);
+$contrasenna = $conecta->real_escape_string($_POST['contrasenna']);
+
+
 // generar consulta que extraiga datos de la base de datos
-$consulta = "SELECT * FROM usuarios WHERE usuario = '$ruser' and contrasenna = '$rpass'";
+$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' and contrasenna = '$contrasenna'";
 if($resultado = $conecta->query($consulta)){
   while($row = $resultado->fetch_array()){
     $userok = $row['usuario'];
@@ -17,8 +20,8 @@ if($resultado = $conecta->query($consulta)){
   $resultado->close();
  }
  $conecta->close();
- if(isset($ruser) && isset($rpass)){
-  if($ruser == $userok && $rpass == $passwordok){
+ if(isset($usuario) && isset($contrasenna)){
+  if($usuario == $userok && $contrasenna == $passwordok){
     $_SESSION['login'] = TRUE;
     $_SESSION['usuario'] = $usuario;
     header("location:secciones/index.php");

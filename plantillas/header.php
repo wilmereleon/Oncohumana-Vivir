@@ -20,7 +20,7 @@
           <a class="nav-item nav-link" href="panel_pacientes.php">Panel de pacientes</a>
           <a class="nav-item nav-link" href="agenda.php">Agendamiento</a>
           <a class="nav-item nav-link" href="ordenes.php">Impresiones pendientes</a>
-          <a class="nav-item nav-link" href="#">Cerrar sesión</a>
+          <a class="nav-item nav-link" href="../secciones/cerrar_sesion.php">Cerrar sesión</a>
       </div>
   </nav>
 
