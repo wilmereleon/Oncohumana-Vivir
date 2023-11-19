@@ -22,6 +22,7 @@ $guardar = $conecta->query($consulta);
   <div class="col-sm-12 col-md-12 col-lg-12">
      <h3 class="text-center">Listado de pacientes en BD</h3>
      <div class="table-responsive table-hover" id="tablaConsulta">
+     <div class="table-responsive"> 
         <table class="table">
           <thead class="text-muted">
               <th class="text-center">Id</th>
@@ -56,7 +57,9 @@ $guardar = $conecta->query($consulta);
             </tr>
           <?php } ?>
           </tbody>
-        </table></
+        </table>
+        </div>
+      </div></
     </div>
   </div>
 </div>
