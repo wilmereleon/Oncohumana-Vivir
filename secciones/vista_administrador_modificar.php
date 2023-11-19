@@ -52,7 +52,7 @@ if (isset($_POST['registrar'])) {
       <input type="number" name="id" placeholder="Número de identificación" class="form-control" required>
       <select type="text" class="form-control" name="tipo" placeholder="Tipo de identificación" required>
         <option value="cc">CC</option>
-        <option value="ce">TE</option>
+        <option value="ce">CE</option>
         <option value="ti">TI</option>
         <option value="pe">PE</option>
         <option value="ps">PS</option>
