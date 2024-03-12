@@ -24,7 +24,7 @@ if($resultado = $conecta->query($consulta)){
   if($usuario == $userok && $contrasenna == $passwordok){
     $_SESSION['login'] = TRUE;
     $_SESSION['usuario'] = $usuario;
-    header("location:secciones/index.php");
+    header("location:secciones/vista_administrador_modificar.php");
   }
   else{
     $mensaje.="<div class='alert alert-danger alert-dismissible fade show' role='alert'>

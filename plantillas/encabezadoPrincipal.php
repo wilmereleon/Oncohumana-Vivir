@@ -33,7 +33,7 @@
                 style="background-color: #5EC7E9" ;>
                 <div class="container">
 
-                    <img src="img/Logo_OncoHumanaVivir.png" alt="" width="30" height="40" class="d-inline-block align-text-top">
+                    <img src="img/Logo_OncoHumanaVivir_new.jpeg" alt="" width="50" height="40" class="d-inline-block align-text-top">
                     <span href="#" style="font-family:Judson;font-size:130%;color:#FFFFFF;font-weight: bold;">Oncohumana Vivir</span>
                     <a class="navbar-brand">
                     </a>
