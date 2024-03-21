@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-class HeaderIncludeTest extends TestCase
+class prueba_test extends TestCase
 {
     public function testIncludeHeaderBlackBox()
     {
