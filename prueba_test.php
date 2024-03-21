@@ -6,17 +6,34 @@ class prueba_test extends TestCase
     public function testIncludeHeaderBlackBox()
     {
         ob_start();
-        include('../plantillas/header_administrador.php');
+        include('plantillas/header_administrador.php');
+        include('secciones/cerrar_sesion.php');
         $output = ob_get_clean();
 
         // Verificar que el contenido del header está en la salida
-        $this->assertStringContainsString('contenido esperado en el header', $output);
+        $this->assertStringContainsString('Modificar datos de paciente', $output);
     }
 
     public function testIncludeHeaderWhiteBox()
     {
         // Verificar que el archivo existe
-        $this->assertFileExists('../plantillas/header_administrador.php');
+        $this->assertFileExists('plantillas/header_administrador.php');
+    }
+
+    public function testUserSessionEnds()
+    {
+        // Incluir el archivo que inicia la sesión y establece la variable de sesión
+        include('secciones/index.php');
+        //include('secciones/cerrar_sesion.php');
+    
+        // Verificar que la variable de sesión se estableció correctamente
+        $this->assertEquals('testUser', $_SESSION['usuario']);
+    
+        // Cerrar la sesión
+        session_destroy();
+    
+        // Verificar que la variable de sesión ya no existe
+        $this->assertFalse(isset($_SESSION['usuario']));
     }
 }
 ?>
