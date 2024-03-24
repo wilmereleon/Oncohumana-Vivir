@@ -19,7 +19,7 @@ class prueba_test extends TestCase
         // Verificar que el archivo existe
         $this->assertFileExists('plantillas/header_administrador.php');
     }
-
+    
     public function testUserSessionEnds()
     {
         // Incluir el archivo que inicia la sesión y establece la variable de sesión
@@ -35,5 +35,15 @@ class prueba_test extends TestCase
         // Verificar que la variable de sesión ya no existe
         $this->assertFalse(isset($_SESSION['usuario']));
     }
+
+    public function testDatabaseConnection()
+{
+    // Crear una nueva instancia de PDO
+    $db = new PDO('mysql:host=localhost;dbname=oncohumana_vivir', 'user', 'pass');
+
+    // Verificar que la conexión se realizó correctamente
+    $this->assertInstanceOf(PDO::class, $db);
+}
+
 }
 ?>

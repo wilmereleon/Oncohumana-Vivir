@@ -1,5 +1,21 @@
 <?php
 use PHPUnit\Framework\TestCase;
+class DatabaseOperations {
+    private $db;
+
+    public function __construct($db) {
+        $this->db = $db;
+    }
+
+    public function update($table, $data, $where) {
+        // Código para realizar la operación de actualización
+    }
+
+    public function delete($table, $where) {
+        // Código para realizar la operación de eliminación
+    }
+}
+
 
 class prueba_test extends TestCase
 {
@@ -35,5 +51,29 @@ class prueba_test extends TestCase
         // Verificar que la variable de sesión ya no existe
         $this->assertFalse(isset($_SESSION['usuario']));
     }
+
+    public function testAdminUserModificationAndDeletion()
+{
+    include 'secciones/vista_administrador_modificar.php';
+    include 'secciones/modificar.php';
+    include 'secciones/eliminar.php';
+
+    $dbOps = new DatabaseOperations($conecta);
+
+    // Datos de prueba para la modificación
+    $newData = ['nombre' => 'NuevoNombre', 'email' => 'nuevoemail@example.com'];
+
+    // Modificar el usuario administrador
+    $updateResult = $dbOps->update('usuarios', $newData, "usuario = 'administrador'");
+
+    // Verificar que la modificación fue exitosa
+    $this->assertTrue($updateResult);
+
+    // Eliminar el usuario administrador
+    $deleteResult = $dbOps->delete('usuarios', "usuario = 'administrador'");
+
+    // Verificar que la eliminación fue exitosa
+    $this->assertTrue($deleteResult);
+}
 }
 ?>
